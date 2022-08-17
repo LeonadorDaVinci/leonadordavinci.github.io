@@ -1,17 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Hey</title>
+    <meta charset="utf-8">
+    <title>Spirited Away * ShawShank Redemption</title>
+    <style>
+			body{
+				background-size: 130% ;
+			    background-position: center ;
+			    background-repeat: no-repeat ;
+			}
+	</style>
+    <style>
+        .container {
+            width: 60%;
+            margin: 10% auto ;
+            background-color: #f0f0f0;
+            padding: 2% 5%;
+            border-radius: 10px
+            
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+            ul li {
+                line-height: 2.3
+            }
+
+        a {
+            color: #20a53a
+        }
+    </style>
+    <style>
+	    * {
+	        margin: 0 ;
+	        padding: 0 ;
+	    }
+	    .footer {
+	        height: 150px ;
+	        background-color: #f0f0f0 ;
+	        margin-top: 1500px ;
+	        opacity: 0.8 ;
+	        padding: 2% 5% ;
+	    }
+    </style>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        width: 100%;
+        height: 80px;
+        background: #5b6d81;
+        line-height: 80px;
+        text-align: center;
+        /* 方法一 */
+        position: fixed;
+        top: 0;
+        box-shadow:0px 0px 10px #888;
+    }
+    </style>
+    <style>
+        .bottombuttons {
+            float:left;
+        }
+        .bottombuttons2 {
+            float:left;
+            margin-left:100px;
+        }
+    </style>
+
 </head>
-<body>
-    <h1>hello world!</h1>
-    <h2>Special thanks to Github!</h2>
-    <div>im a special box!</div><br />
-    <a href=http://www.baidu.com target="_blank">百度</a>
-    <a href=http://translate.google.cn target="_blank">谷歌翻译</a>
-    <h6>Why i am here?And why the links don't work?</h6>
-    <a href=testpage target="_blank">testpage</a>
-    <h3>Refresh sign</h3>
+<body background="background/ukrainewar.jpg" >
+    <div class="header">
+        <h1>创立日期<span id="days">0</span>天</h1>
+        <script>
+            var s1 = '2022-07-29';//设置为你的建站时间
+
+            s1 = new Date(s1.replace(/-/g, "/"));
+
+            s2 = new Date();
+
+            var days = s2.getTime() - s1.getTime();
+
+            var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+
+            document.getElementById('days').innerHTML = number_of_days;
+        </script>
+    </div>
+    <div class="container">
+        <h1 align="center"></h1>
+        <h3>Spirited Away * ShawShank Redemption</h3>
+        <ul>
+            <li>该网站尚未构建完毕，正在从百度贴吧迁移内容</li>
+            <li>In God We Trust</li>
+            <li><strong><a href=http://translate.google.cn target="_blank">谷歌翻译</a></strong> 或 <strong><a href=http://baidu.com target="" >百度搜索</a></strong></li>
+            <li><strong><a href=leonadordavinci.github.io target="">刷新网页</a></strong></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <h2 align="center">资源</h2>
+        <div class="bottombuttons">
+            <ul>
+                <li><strong><a href="zhihuarticle/directory.html">暂停服务</a></strong></li>
+                <li><a href="register.html">Register(暂停服务)</a></li>
+            </ul>
+        </div>
+        <div class="bottombuttons2">
+            <ul>
+                <li><strong><a href="http://47.101.171.40:81" target="_blank">暂停服务</a></strong></li>
+                <li><strong><a href="lotmmod.html">暂停服务</a></strong></li>
+            </ul>
+        </div>
+        <div class="bottombuttons2">
+            <ul>
+                <li><strong><a href="effect.html">Special Effect</a></strong></li>
+                <li>content</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
