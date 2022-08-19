@@ -28,7 +28,24 @@
 
     </div><br>
     <h5 align="center"><b><a href=index.html>Return to the original page</a></b></h5>
-   
+   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+	<div id="gitalk-container">
+	<script type="text/javascript">
+	var gitalk = new Gitalk({
+  clientID: '04b734346c6315e5dc5c',
+  clientSecret: 'd57bf73261bed5858ec2ff0aa2503ce27146aa84',
+  repo: 'leonadordavinci.github.io',
+  owner: 'leonadordavinci',
+  admin: ['leonadordavinci'],
+  id: location.lotmmod,      // 请确保你的 location 连接小于 50 个字符，否则，插件会生成失败
+  distractionFreeMode: false  // 专注模式
+})
+
+gitalk.render('gitalk-container')
+		</script>
+	
+	</div>
 	
 	
 </body>
