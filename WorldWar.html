@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #NationName {
+            display: none;
+        }
+
+        td {
+            box-shadow: inset 0px 0px 0px 0px darkgray;
+        }
+
+        #hongChao {
+            background-color: yellow;
+        }
+
+        #lianBangZhongZhuJun {
+            background-color: red;
+        }
+
+        #puKeKingdom {
+            background-color: orange;
+        }
+
+        #laiPaRepublic {
+            background-color: blue;
+        }
+
+        #tianChao {
+            background-color: darkred;
+        }
+
+        #leaonia {
+            background-color: darkblue;
+        }
+
+        #luoMianRepublic {
+            background-color: pink;
+        }
+
+        #griffin {
+            background-color: purple;
+        }
+
+        #arnokov {
+            background-color: #80FFFF ;
+        }
+
+        #akatika {
+            background-color: #977C00;
+        }
+
+        #emptyArea {
+            background-color: green;
+        }
+
+        #Liurnia {
+            background-color: gold;
+        }
+
+        #LeagueOfLiberty {
+            background-color: #FF359A;
+        }
+
+        
+
+    </style>
+    
+
+
+</head>
+
+<body>
+    <span>
+        <span>
+        <table id="map" border="1" cellspacing="0" align="center">
+        <caption><font size="20" color="black"><p>第·二·次·架·空·世·界·吧·架·空·国·度·大·战</p></font></caption>
+            <tr>
+                <th width="50" height="50" align="center" bgcolor="gray"></th>
+                <th width="50" height="50" align="center" bgcolor="gray">A</th>
+                <th width="50" height="50" align="center" bgcolor="gray">B</th>
+                <th width="50" height="50" align="center" bgcolor="gray">C</th>
+                <th width="50" height="50" align="center" bgcolor="gray">D</th>
+                <th width="50" height="50" align="center" bgcolor="gray">E</th>
+                <th width="50" height="50" align="center" bgcolor="gray">F</th>
+                <th width="50" height="50" align="center" bgcolor="gray">G</th>
+                <th width="50" height="50" align="center" bgcolor="gray">H</th>
+                <th width="50" height="50" align="center" bgcolor="gray">I</th>
+                <th width="50" height="50" align="center" bgcolor="gray">J</th>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">1</td>
+                <td id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="griffin" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">2</td>
+                <td id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">3</td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">4</td>
+                <td id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">5</td>
+                <td id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">6</td>
+                <td id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">7</td>
+                <td id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">8</td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="lianBangZhongZhuJun" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">9</td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="puKeKingdom" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">10</td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="emptyArea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td id="akatika" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+        
+        </table>
+        </span>
+        <span>
+        
+            <div id="box" onmouseover="display()" onmouseout="disappear()">
+                <span>
+                <h6>【区块信息】</h6>
+                <p id="nationName" style="display: inline;">拥有者：</p>
+                    <p id="NationName" style="display: inline;">null</p>
+                </span>
+            </div>
+    
+            
+        </span>
+    </span>
+
+
+</body>
+</html>
+
+<script>
+
+    function areaSelect(x){
+        x.style.borderColor="black";
+
+        if(x.getAttribute("id") == "hongChao"){
+            //alert(x.getAttribute("id"));
+            document.getElementById("NationName").innerHTML="宏朝";
+            //display("nationName");
+            //display("NationName");
+        } else if (x.getAttribute("id") == "emptyArea"){
+            document.getElementById("NationName").innerHTML="无主之地";
+        }else if (x.getAttribute("id") == "Liurnia"){
+            document.getElementById("NationName").innerHTML="利耶尼亚邦联";
+        }else if (x.getAttribute("id") == "lianBangZhongZhuJun"){
+            document.getElementById("NationName").innerHTML="联邦众驻军";
+        }else if (x.getAttribute("id") == "puKeKingdom"){
+            document.getElementById("NationName").innerHTML="普克王国";
+        }else if (x.getAttribute("id") == "laiPaRepublic"){
+            document.getElementById("NationName").innerHTML="莱帕多基亚共和国";
+        }else if (x.getAttribute("id") == "tianChao"){
+            document.getElementById("NationName").innerHTML="天朝联邦";
+        }else if (x.getAttribute("id") == "leaonia"){
+            document.getElementById("NationName").innerHTML="劳尔尼亚联邦";
+        }else if (x.getAttribute("id") == "luoMianRepublic"){
+            document.getElementById("NationName").innerHTML="洛眠共和国";
+        }else if (x.getAttribute("id") == "griffin"){
+            document.getElementById("NationName").innerHTML="格里芬之国";
+        }else if (x.getAttribute("id") == "akatika"){
+            document.getElementById("NationName").innerHTML="阿喀提卡城国";
+        }else if (x.getAttribute("id") == "arnokov"){
+            document.getElementById("NationName").innerHTML="阿诺科夫社会主义联邦";
+        }else if (x.getAttribute("id") == "LeagueOfLiberty"){
+            document.getElementById("NationName").innerHTML="自由国家联合体";
+        }
+        
+        
+    }
+
+    function areaCancel(x){
+        x.style.borderColor="gray";
+        
+    }
+
+    function display(y){
+    //document.getElementById("text").innerHTML="changed";
+    document.getElementById(y).style.display = "block";
+    }
+    function disappear(){
+        document.getElementById("box").style.display = "none";
+    }
+</script>
