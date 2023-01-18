@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapGenerate</title>
+    <style type = "text/css">
+    </style>
+</head>
+<body>
+    Line:<input type="text" id="h"/><br/>
+    Column:<input type="text" id="l"/><br/>
+    <input type="button" value="Generate" onclick="generate()"/><br>
+    <input type="button" value="WriteJson" onclick="writeJson()"/><br>
+    Map:<br>
+    <div id="canvas">
+    </div>
+        <input id="input" type="file">
+        <script src="json2.js"></script>
+        <script>
+            const input= document.querySelector('input[type=file]');
+
+            input.addEventListener('change', ()=>{
+                const reader = new FileReader()
+                reader.readAsText(input.files[0],'utf-8')
+                reader.onload = () =>{
+                    var MapData = reader.result
+
+                    //var MapData1 = JSON.stringify(MapData)
+
+                    document.getElementById("canvas").innerHTML = MapData
+
+                }
+            }, false)
+        </script>
+
+
+</body>
+<script type="text/javascript">
+    function generate(){
+               /*
+                   1.得到输入的行和列的值
+                   2.生成表格
+                       -循环行
+                       -在行里面循环单元格
+                   3.显示到页面上
+                       -使用innerHTML属性将表格代码设置到div里面
+               */
+        var h =document.getElementById("h").value;
+               //alert(h);
+        var l =document.getElementById("l").value;
+        var tab ="<table id='map' border='1' bordercolor='gray' cellspacing='0'>";
+        for(var i=0;i<h;i++){
+            tab += "<tr>";
+            for(var j=0;j<l;j++){
+                var colorId = Math.round(Math.random())
+                if(colorId == 1){
+                    tab +="<td width='10' height='10' bgcolor='green' onmouseover='SelectArea(this)' onmouseout='CancelArea(this)'></td>"
+                }else{
+                    tab +="<td width='10' height='10' bgcolor='blue' onmouseover='SelectArea(this)' onmouseout='CancelArea(this)'></td>"
+                }
+                       
+            }
+            tab +="</tr>"
+        }
+        tab +="</table>";
+
+        document.getElementById("canvas").innerHTML=tab;
+        
+    }
+
+    function SelectArea(x) {
+        //document.getElementById("map").style.border="1";
+        x.style.borderColor="black";
+    }
+
+    function CancelArea(y){
+        //document.getElementById("map").style.border="0";
+        y.style.borderColor="gray";
+    }
+
+
+
+    
+
+</script>
+</html>
+<script type="text/javascript" src="FileSaver.js" charset="utf-8"></script>
+<script type="text/javascript">
+    function writeJson(){
+        var content = document.getElementById("canvas").innerHTML;
+        
+        //var rs = fs.createWriteStream('./1.zip');
+        /*
+        let data ={
+            version:"alpha1.0",
+            map:content,
+            id:"abc"
+        }
+        */
+
+        //data = JSON.stringify(data,undefined,4);
+
+        var blob = new Blob([content],{type:"text/plain;charset=utf-8"});
+        saveAs(blob,"file.json");
+
+    }
+</script>
