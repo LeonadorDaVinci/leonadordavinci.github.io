@@ -7,6 +7,12 @@
     <title>Document</title>
 
     <style>
+
+        body {
+            height: 2000px;
+            position: relative;
+        }
+
         #NationName {
             display: none;
         }
@@ -76,11 +82,12 @@
 </head>
 
 <body>
-    <span>
-        <span>
-        <table id="map" border="1" cellspacing="0" align="center">
-        <caption><font size="20" color="black"><p>第·二·次·架·空·世·界·吧·架·空·国·度·大·战</p></font></caption>
-            <tr>
+    <div id="main" style="border: 0px solid black;width: 100%;height: 1000px;">
+        <div style="border: 0px solid red;width: 75%;float: left;height: 999px;">
+            <table id="map" border="1" cellspacing="0" align="center">
+            
+            <caption><font size="20" color="black"><p>第·二·次·架·空·世·界·吧·架·空·国·度·大·战</p></font></caption>
+                <tr>
                 <th width="50" height="50" align="center" bgcolor="gray"></th>
                 <th width="50" height="50" align="center" bgcolor="gray">A</th>
                 <th width="50" height="50" align="center" bgcolor="gray">B</th>
@@ -224,23 +231,25 @@
                 <td id="akatika" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
             </tr>
         
-        </table>
-        </span>
-        <span>
+            </table>
         
-            <div id="box" onmouseover="display()" onmouseout="disappear()">
-                <span>
-                <h6>【区块信息】</h6>
+        
+            
+        </div>
+        <div style="border: 0px solid yellow; width: 24%;float: right;height: 999px;">
+            <span>
+                <h1>【区块信息】</h1>
                 <p id="nationName" style="display: inline;">拥有者：</p>
                     <p id="NationName" style="display: inline;">null</p>
-                </span>
-            </div>
-    
-            
-        </span>
-    </span>
-	Move your mouse on the map to select an area.<br>
-	The information of the area you select will be displayed above.<br>
+            </span><br>
+            Move your mouse on the map to select an area.<br>
+	        The information of the area you select will be displayed above.<br>
+
+        </div>
+    </div>
+
+    <div style="border: 2px solid green;bottom: 0px;position:absolute; width: 100%;">
+    Chat Area<br>
 	<br>
     
     
@@ -260,6 +269,7 @@
 
             gitalk.render('gitalk-container')
 	</script>
+            </div>
 
 
 </body>
