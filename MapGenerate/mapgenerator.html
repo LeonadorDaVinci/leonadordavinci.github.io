@@ -17,7 +17,7 @@
     Seed:<input type="text" id="seed" value="种子（任意字符串）"/><br/>
     <input type="button" value="Generate" onclick="generateTable()"/><br>
     <input type="button" value="WriteJson" onclick="writeJson()"/><br>
-
+    <input id="gradizeId" type="button" value="Gradize Off" onclick="gradize()"/><br>
     <input type="button" value="DeveloperInterface" onclick="test()"/><br>
     Map:<br>
     <div id="canvas">
@@ -107,6 +107,16 @@
         return e.getAttribute("class");
     }
 
+    function gradize (){
+        if(document.getElementById('map').border == 1){
+            document.getElementById('map').border = 0;
+            document.getElementById('gradizeId').value = "Gradize On";
+        }else{
+            document.getElementById('map').border = 1;
+            document.getElementById('gradizeId').value = "Gradize Off";
+        }
+    }
+
     function colorizeMap (){
 
         
@@ -133,22 +143,24 @@
                 
 
                 if(document.getElementById(i+'/'+j).getAttribute("class") == 9){
-                    document.getElementById(i+'/'+j).style.backgroundColor = "#BCC6CC";
-                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 8){
                     document.getElementById(i+'/'+j).style.backgroundColor = "#786D5F";
-                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 7){
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 8){
                     document.getElementById(i+'/'+j).style.backgroundColor = "#C58917";
-                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 6){
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 7){
                     document.getElementById(i+'/'+j).style.backgroundColor = "#FFDB58";
-                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 5){
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 6){
                     document.getElementById(i+'/'+j).style.backgroundColor = "#BCE954";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 5){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#87CEFA";
                 }else if(document.getElementById(i+'/'+j).getAttribute("class") == 4){
                     document.getElementById(i+'/'+j).style.backgroundColor = "#43C6DB";
                 }else if(document.getElementById(i+'/'+j).getAttribute("class") == 3){
                     document.getElementById(i+'/'+j).style.backgroundColor = "#4C787E";
                 }else if(document.getElementById(i+'/'+j).getAttribute("class") == 2){
-                    document.getElementById(i+'/'+j).style.backgroundColor = "#151B54";
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#2F4F4F";
                 }else if(document.getElementById(i+'/'+j).getAttribute("class") == 1){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#151B54";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 0){
                     document.getElementById(i+'/'+j).style.backgroundColor = "#151B54";
                 }
                 
