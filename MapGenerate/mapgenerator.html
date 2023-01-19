@@ -9,15 +9,21 @@
     </style>
 </head>
 <body>
+
+    
+
     Line:<input type="text" id="h"/><br/>
     Column:<input type="text" id="l"/><br/>
-    <input type="button" value="Generate" onclick="generate()"/><br>
+    Seed:<input type="text" id="seed" value="种子（任意字符串）"/><br/>
+    <input type="button" value="Generate" onclick="generateTable()"/><br>
     <input type="button" value="WriteJson" onclick="writeJson()"/><br>
+
+    <input type="button" value="DeveloperInterface" onclick="test()"/><br>
     Map:<br>
     <div id="canvas">
     </div>
         <input id="input" type="file">
-        <script src="json2.js"></script>
+        
         <script>
             const input= document.querySelector('input[type=file]');
 
@@ -34,11 +40,13 @@
                 }
             }, false)
         </script>
+        
 
 
 </body>
 <script type="text/javascript">
-    function generate(){
+    //生成地图
+    function generateTable(){
                /*
                    1.得到输入的行和列的值
                    2.生成表格
@@ -51,42 +59,107 @@
                //alert(h);
         var l =document.getElementById("l").value;
         var tab ="<table id='map' border='1' bordercolor='gray' cellspacing='0'>";
-        for(var i=0;i<h;i++){
+        for(var i=1;i<=h;i++){
             tab += "<tr>";
-            for(var j=0;j<l;j++){
-                var colorId = Math.round(Math.random())
-                if(colorId == 1){
-                    tab +="<td width='10' height='10' bgcolor='green' onmouseover='SelectArea(this)' onmouseout='CancelArea(this)'></td>"
-                }else{
-                    tab +="<td width='10' height='10' bgcolor='blue' onmouseover='SelectArea(this)' onmouseout='CancelArea(this)'></td>"
-                }
-                       
+            for(var j=1;j<=l;j++){
+                //var colorId = Math.round(Math.random())
+                tab +="<td " + "id='" + i +"/"+j+"' class='0' width='10' height='10' style='background-color=white' onmouseover='SelectArea(this)' onmouseout='CancelArea(this)'></td>"
+                //生成单元格坐标和权值   
             }
             tab +="</tr>"
         }
         tab +="</table>";
 
         document.getElementById("canvas").innerHTML=tab;
+
+        //gradizeMap(h,l);
+
+        colorizeMap();
         
     }
-
+    //鼠标选中事件
     function SelectArea(x) {
         //document.getElementById("map").style.border="1";
         x.style.borderColor="black";
     }
-
+    //鼠标移开事件
     function CancelArea(y){
         //document.getElementById("map").style.border="0";
         y.style.borderColor="gray";
     }
+    //开发者借口（仅测试用）
+    function test(){
+        //alert(getCoordinateValue(30+"/"+30));
+
+        //var x =document.getElementById("x").value;
+               //alert(h);
+        //var y =document.getElementById("y").value;
+
+        //var object = new Perlin(Math.random);
+
+        //value = object.noise(x/10, y/10, 0); // Leave z fixed at zero while varying x and y will give you a 2D perlin noise function.
+        //document.getElementById("canvas").innerHTML=value;
+        alert("Developer only.Ignore if you are visitor.开发者测试接口，用户请忽略");
+    }
+    //根据单元格坐标获取该单元格的权值
+    function getCoordinateValue (coordinate){
+        var e = document.getElementById(coordinate);
+        return e.getAttribute("class");
+    }
+
+    function colorizeMap (){
+
+        
+
+        var h1 =document.getElementById("h").value;
+               //alert(h);
+        var l1 =document.getElementById("l").value;
+
+        var seed =document.getElementById("seed").value;
+
+        for(var i=1;i<=h1;i++){
+            
+            for(var j=1;j<=l1;j++){
+
+                var pn = new Perlin(seed);
 
 
+                value = pn.noise(i/10, j/10, 0); // Leave z fixed at zero while varying x and y will give you a 2D perlin noise function.
+            
+                document.getElementById(i+'/'+j).className=Math.floor(value*10);
+
+
+                //document.getElementById(i+'/'+j).innerHTML=document.getElementById(i+'/'+j).getAttribute('class');
+                
+
+                if(document.getElementById(i+'/'+j).getAttribute("class") == 8){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#BCC6CC";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 7){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#786D5F";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 6){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#C58917";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 5){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#FFDB58";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 4){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#BCE954";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 3){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#43C6DB";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 2){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#4C787E";
+                }else if(document.getElementById(i+'/'+j).getAttribute("class") == 1){
+                    document.getElementById(i+'/'+j).style.backgroundColor = "#151B54";
+                }
+                
+            }
+            
+        }
+
+    }
 
     
 
 </script>
 </html>
-<script type="text/javascript" src="FileSaver.js" charset="utf-8"></script>
 <script type="text/javascript">
     function writeJson(){
         var content = document.getElementById("canvas").innerHTML;
@@ -107,3 +180,9 @@
 
     }
 </script>
+<script type="text/javascript" src="CoreGenerate.js" charset="utf-8"></script>
+<script type="text/javascript" src="FileSaver.js" charset="utf-8"></script>
+<script src="json2.js"></script>
+<script src="three.js"></script>
+<script src="perlin.js"></script>
+<script src="perlinNoise.js"></script>
