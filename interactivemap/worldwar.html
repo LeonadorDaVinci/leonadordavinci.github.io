@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            height: 2000px;
+            position: relative;
+        }
+
+        #NationName {
+            
+        }
+
+        #Economy {
+            
+        }
+
+        td {
+            box-shadow: inset 0px 0px 0px 0px darkgray;
+        }
+
+        #hongChao {
+            background-color: yellow;
+        }
+
+        #lianBangZhongZhuJun {
+            background-color: red;
+        }
+
+        #puKeKingdom {
+            background-color: orange;
+        }
+
+        #laiPaRepublic {
+            background-color: blue;
+        }
+
+        #tianChao {
+            background-color: darkred;
+        }
+
+        #leaonia {
+            background-color: darkblue;
+        }
+
+        #luoMianRepublic {
+            background-color: pink;
+        }
+
+        #griffin {
+            background-color: purple;
+        }
+
+        #arnokov {
+            background-color: #80FFFF ;
+        }
+
+        #akatika {
+            background-color: #977C00;
+        }
+
+        #emptyArea {
+            background-color: green;
+        }
+
+        #Liurnia {
+            background-color: gold;
+        }
+
+        #LeagueOfLiberty {
+            background-color: #FF359A;
+        }
+
+        #sheep{
+            background-color: #B1FB17;
+        }
+
+        #Gambia {
+            background-color: #7F525D;
+        }
+
+        #britainSocialism {
+            background-color: #EDC9AF;
+        }
+
+        #americaSocialism{
+            background-color: #306754;
+        }
+
+        #limburg{
+            background-color: #EDDA74;
+        }
+
+        #atlantisKingdom {
+            background-color: mediumblue;
+        }
+
+        #korea {
+            background-color: darksalmon;
+        }
+
+        
+
+    </style>
+    
+
+
+</head>
+
+<body>
+    <div id="main" style="border: 0px solid black;width: 100%;height: 1000px;">
+        <div style="border: 0px solid red;width: 75%;float: left;height: 999px;">
+            <table id="map" border="1" cellspacing="0" align="center">
+            
+            <caption><font size="20" color="black"><p>第·二·次·架·空·世·界·吧·架·空·国·度·大·战</p></font></caption>
+                <tr>
+                <th width="50" height="50" align="center" bgcolor="gray"></th>
+                <th width="50" height="50" align="center" bgcolor="gray">A</th>
+                <th width="50" height="50" align="center" bgcolor="gray">B</th>
+                <th width="50" height="50" align="center" bgcolor="gray">C</th>
+                <th width="50" height="50" align="center" bgcolor="gray">D</th>
+                <th width="50" height="50" align="center" bgcolor="gray">E</th>
+                <th width="50" height="50" align="center" bgcolor="gray">F</th>
+                <th width="50" height="50" align="center" bgcolor="gray">G</th>
+                <th width="50" height="50" align="center" bgcolor="gray">H</th>
+                <th width="50" height="50" align="center" bgcolor="gray">I</th>
+                <th width="50" height="50" align="center" bgcolor="gray">J</th>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">1</td>
+                <td class="A/1" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/1" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/1" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/1" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/1" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/1" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/1" id="griffin" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">2</td>
+                <td class="A/2" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/2" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/2" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/2" id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/2" id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/2" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/2" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">3</td>
+                <td class="A/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/3" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/3" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">4</td>
+                <td class="A/4" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/4" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/4" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/4" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/4" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/4" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">5</td>
+                <td class="A/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/5" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/5" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/5" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/5" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">6</td>
+                <td class="A/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/6" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/6" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/6" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/6" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">7</td>
+                <td class="A/7" id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/7" id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/7" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/7" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/7" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/7" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/7" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">8</td>
+                <td class="A/8" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/8" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/8" id="lianBangZhongZhuJun" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/8" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/8" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/8" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/8" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/8" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/8" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/8" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">9</td>
+                <td class="A/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/9" id="puKeKingdom" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/9" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/9" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/9" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/9" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/9" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/9" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+            <tr>
+                <td width="50" height="50" align="center" bgcolor="gray">10</td>
+                <td class="A/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="B/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="C/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="D/10" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="E/10" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="F/10" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="G/10" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="H/10" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="I/10" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="J/10" id="akatika" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+            </tr>
+        
+            </table>
+        
+        
+            
+        </div>
+        <div style="border: 0px solid yellow; width: 24%;float: right;height: 999px;padding-top: 20%;">
+            <span>
+                <h1>【区块信息】</h1>
+                <h4><b>基本信息</b></h4>
+                <p id="nationName" style="display: inline;">拥有者：</p>
+                <p id="NationName" style="display: inline;">null</p>
+                <br>
+                <div id="economy" style="display: none;">
+                    <p style="display: inline;">经济：</p>
+                    <p id="Economy" style="display: inline">null</p>
+                </div>
+
+                <br>
+                <div id="construction" style="display: none;">
+                    <p style="display: inline;">基建：</p>
+                    <p id="Construction" style="display: inline">null</p>
+                </div>
+
+                <br>
+                <div id="culture" style="display: none;">
+                    <p style="display: inline;">文化：</p>
+                    <p id="Culture" style="display: inline">null</p>
+                </div>
+
+                <h4><b>驻军信息</b></h4>
+                <div id="army1" style="display: none;">
+                    <p style="display: inline;">第一支军队：</p>
+                    <p id="Army1" style="display: inline">null</p>
+                </div>
+                <br>
+
+                <div id="army1personel" style="display: none;">
+                    <p style="display: inline;">人数：</p>
+                    <p id="Army1personel" style="display: inline">null</p>
+                </div>
+                <br>
+
+                <div id="army2" style="display: none;">
+                    <p style="display: inline;">第二支军队：</p>
+                    <p id="Army2" style="display: inline">null</p>
+                </div>
+                
+
+            </span><br>
+            Move your mouse on the map to select an area.<br>
+	        The information of the area you select will be displayed above.<br>
+
+        </div>
+    </div>
+
+    <div style="border: 2px solid green;bottom: 0px;position:absolute; width: 100%;">
+    Chat Area<br>
+	<br>
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+            <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+            <div id="gitalk-container">
+	    <script type="text/javascript">
+	    var gitalk = new Gitalk({
+            clientID: '04b734346c6315e5dc5c',
+            clientSecret: 'd57bf73261bed5858ec2ff0aa2503ce27146aa84',
+            repo: 'leonadordavinci.github.io',
+            owner: 'leonadordavinci',
+            admin: ['leonadordavinci'],
+            id: location.pathname,      // 请确保你的 location 连接小于 50 个字符，否则，插件会生成失败
+            distractionFreeMode: false  // 专注模式
+})
+
+            gitalk.render('gitalk-container')
+	</script>
+            </div>
+
+
+</body>
+</html>
+
+<script language="javascript">
+
+    function areaSelect(x){
+        x.style.borderColor="black";
+
+        className = x.getAttribute("class");
+
+        checkChunkArmy(className);
+
+        //alert(className);
+
+        if(x.getAttribute("id") == "hongChao"){
+            //alert(x.getAttribute("id"));
+            document.getElementById("NationName").innerHTML="宏朝";
+            document.getElementById("Economy").innerHTML="12";
+            display("economy");
+            document.getElementById("Culture").innerHTML="0";
+            display("culture");
+            document.getElementById("Construction").innerHTML="0";
+            display("construction");
+        } else if (x.getAttribute("id") == "emptyArea"){
+            document.getElementById("NationName").innerHTML="无主之地";
+        }else if (x.getAttribute("id") == "Liurnia"){
+            document.getElementById("NationName").innerHTML="利耶尼亚邦联";
+            document.getElementById("Economy").innerHTML="5";
+            display("economy");
+            document.getElementById("Culture").innerHTML="10";
+            display("culture");
+            document.getElementById("Construction").innerHTML="6";
+            display("construction");
+        }else if (x.getAttribute("id") == "lianBangZhongZhuJun"){
+            document.getElementById("NationName").innerHTML="联众邦驻军";
+            document.getElementById("Economy").innerHTML="15";
+            display("economy");
+            document.getElementById("Culture").innerHTML="0";
+            display("culture");
+            document.getElementById("Construction").innerHTML="10";
+            display("construction");
+        }else if (x.getAttribute("id") == "puKeKingdom"){
+            document.getElementById("NationName").innerHTML="普克王国";
+            document.getElementById("Economy").innerHTML="10";
+            display("economy");
+            document.getElementById("Culture").innerHTML="10";
+            display("culture");
+            document.getElementById("Construction").innerHTML="10";
+            display("construction");
+        }else if (x.getAttribute("id") == "laiPaRepublic"){
+            document.getElementById("NationName").innerHTML="莱帕多基亚共和国";
+            document.getElementById("Economy").innerHTML="9";
+            display("economy");
+            document.getElementById("Culture").innerHTML="10";
+            display("culture");
+            document.getElementById("Construction").innerHTML="15";
+            display("construction");
+        }else if (x.getAttribute("id") == "tianChao"){
+            document.getElementById("NationName").innerHTML="天朝联邦";
+            document.getElementById("Economy").innerHTML="7";
+            display("economy");
+            document.getElementById("Culture").innerHTML="6";
+            display("culture");
+            document.getElementById("Construction").innerHTML="7";
+            display("construction");
+        }else if (x.getAttribute("id") == "leaonia"){
+            document.getElementById("NationName").innerHTML="劳尔尼亚联邦";
+            document.getElementById("Economy").innerHTML="1";
+            display("economy");
+            document.getElementById("Culture").innerHTML="1";
+            display("culture");
+            document.getElementById("Construction").innerHTML="12";
+            display("construction");
+        }else if (x.getAttribute("id") == "luoMianRepublic"){
+            document.getElementById("NationName").innerHTML="洛眠共和国";
+            document.getElementById("Economy").innerHTML="12";
+            display("economy");
+            document.getElementById("Culture").innerHTML="8";
+            display("culture");
+            document.getElementById("Construction").innerHTML="5";
+            display("construction");
+        }else if (x.getAttribute("id") == "griffin"){
+            document.getElementById("NationName").innerHTML="格里芬之国";
+            document.getElementById("Economy").innerHTML="8";
+            display("economy");
+            document.getElementById("Culture").innerHTML="7";
+            display("culture");
+            document.getElementById("Construction").innerHTML="7";
+            display("construction");
+        }else if (x.getAttribute("id") == "akatika"){
+            document.getElementById("NationName").innerHTML="阿喀提卡城国";
+            document.getElementById("Economy").innerHTML="5";
+            display("economy");
+            document.getElementById("Culture").innerHTML="9";
+            display("culture");
+            document.getElementById("Construction").innerHTML="5";
+            display("construction");
+        }else if (x.getAttribute("id") == "arnokov"){
+            document.getElementById("NationName").innerHTML="阿诺科夫社会主义联邦";
+            document.getElementById("Economy").innerHTML="6";
+            display("economy");
+            document.getElementById("Culture").innerHTML="9";
+            display("culture");
+            document.getElementById("Construction").innerHTML="7";
+            display("construction");
+        }else if (x.getAttribute("id") == "LeagueOfLiberty"){
+            document.getElementById("NationName").innerHTML="自由国家联合体";
+            document.getElementById("Economy").innerHTML="14";
+            display("economy");
+            document.getElementById("Culture").innerHTML="7";
+            display("culture");
+            document.getElementById("Construction").innerHTML="10";
+            display("construction");
+        }else if (x.getAttribute("id") == "sheep"){
+            document.getElementById("NationName").innerHTML="羊村";
+            document.getElementById("Economy").innerHTML="4";
+            display("economy");
+            document.getElementById("Culture").innerHTML="8";
+            display("culture");
+            document.getElementById("Construction").innerHTML="6";
+            display("construction");
+        }else if (x.getAttribute("id") == "Gambia"){
+            document.getElementById("NationName").innerHTML="冈比亚";
+            document.getElementById("Economy").innerHTML="5";
+            display("economy");
+            document.getElementById("Culture").innerHTML="7";
+            display("culture");
+            document.getElementById("Construction").innerHTML="5";
+            display("construction");
+        }else if (x.getAttribute("id") == "americaSocialism"){
+            document.getElementById("NationName").innerHTML="美利坚社会主义合众国";
+            document.getElementById("Economy").innerHTML="10";
+            display("economy");
+            document.getElementById("Culture").innerHTML="3";
+            display("culture");
+            document.getElementById("Construction").innerHTML="10";
+            display("construction");
+        }else if (x.getAttribute("id") == "britainSocialism"){
+            document.getElementById("NationName").innerHTML="不列颠社会主义共和国";
+            document.getElementById("Economy").innerHTML="Lack of Info";
+            display("economy");
+            document.getElementById("Culture").innerHTML="Lack of Info";
+            display("culture");
+            document.getElementById("Construction").innerHTML="Lack of Info";
+            display("construction");
+        }else if (x.getAttribute("id") == "limburg"){
+            document.getElementById("NationName").innerHTML="里森堡";
+            document.getElementById("Economy").innerHTML="7";
+            display("economy");
+            document.getElementById("Culture").innerHTML="7";
+            display("culture");
+            document.getElementById("Construction").innerHTML="8";
+            display("construction");
+        }else if (x.getAttribute("id") == "atlantisKingdom"){
+            document.getElementById("NationName").innerHTML="亚特兰蒂斯王国";
+            document.getElementById("Economy").innerHTML="11";
+            display("economy");
+            document.getElementById("Culture").innerHTML="12";
+            display("culture");
+            document.getElementById("Construction").innerHTML="5";
+            display("construction");
+        }else if (x.getAttribute("id") == "korea"){
+            document.getElementById("NationName").innerHTML="社会主义韩国";
+            document.getElementById("Economy").innerHTML="Lack of Info";
+            display("economy");
+            document.getElementById("Culture").innerHTML="Lack of Info";
+            display("culture");
+            document.getElementById("Construction").innerHTML="Lack of Info";
+            display("construction");
+        }
+        
+        
+    }
+
+    function areaCancel(x){
+        x.style.borderColor="gray";
+        
+    }
+
+    function display(y){
+    //document.getElementById("text").innerHTML="changed";
+    document.getElementById(y).style.display = "inline";
+    }
+    function disappear(y){
+        document.getElementById(y).style.display = "none";
+    }
+</script>
+<script src="army.js"></script>
