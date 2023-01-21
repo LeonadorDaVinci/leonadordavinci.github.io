@@ -115,7 +115,14 @@
 
 <body>
     <div id="main" style="border: 0px solid black;width: 100%;height: 1000px;">
-        <div style="border: 0px solid red;width: 75%;float: left;height: 999px;">
+        <div style="border: 0px solid red;width: 15%;float: left;height: 999px;padding-top: 30%;">
+            <b>沙盘推演模式：</b>
+            <input id="militaryButton" type="button" value="Military Mode On" onclick="militaryModeSwitch()">
+            <br>
+            <b>开发者接口：</b>
+            <input id="devInterface" type="button" value="Developer Interface" onclick="test()">
+        </div>
+        <div style="border: 0px solid red;width: 60%;float: left;height: 999px;">
             <table id="map" border="1" cellspacing="0" align="center">
             
             <caption><font size="20" color="black"><p>第·二·次·架·空·世·界·吧·架·空·国·度·大·战</p></font></caption>
@@ -134,133 +141,133 @@
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">1</td>
-                <td class="A/1" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/1" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/1" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/1" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/1" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/1" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/1" id="griffin" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/1" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/1" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/1" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/1" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/1" id="luoMianRepublic" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/1" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/1" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/1" id="griffin" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">2</td>
-                <td class="A/2" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/2" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/2" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/2" id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/2" id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/2" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/2" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/2" id="leaonia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/2" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/2" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/2" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/2" id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/2" id="luoMianRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/2" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/2" id="griffin" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">3</td>
-                <td class="A/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/3" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/3" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/3" id="britainSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/3" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/3" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/3" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">4</td>
-                <td class="A/4" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/4" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/4" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/4" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/4" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/4" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/4" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/4" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/4" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/4" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/4" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/4" id="korea" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/4" id="sheep" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">5</td>
-                <td class="A/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/5" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/5" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/5" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/5" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/5" id="tianChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/5" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/5" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/5" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/5" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/5" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">6</td>
-                <td class="A/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/6" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/6" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/6" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/6" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/6" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/6" id="atlantisKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/6" id="Liurnia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/6" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/6" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/6" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">7</td>
-                <td class="A/7" id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/7" id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/7" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/7" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/7" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/7" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/7" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/7" id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/7" id="laiPaRepublic" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/7" id="tianChao" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/7" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/7" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/7" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/7" id="limburg" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/7" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">8</td>
-                <td class="A/8" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/8" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/8" id="lianBangZhongZhuJun" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/8" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/8" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/8" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/8" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/8" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/8" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/8" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/8" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/8" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/8" id="lianBangZhongZhuJun" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/8" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/8" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/8" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/8" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/8" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/8" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/8" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">9</td>
-                <td class="A/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/9" id="puKeKingdom" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/9" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/9" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/9" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/9" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/9" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/9" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/9" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/9" id="puKeKingdom" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/9" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/9" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/9" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/9" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/9" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/9" id="Gambia" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
             <tr>
                 <td width="50" height="50" align="center" bgcolor="gray">10</td>
-                <td class="A/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="B/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="C/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="D/10" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="E/10" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="F/10" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="G/10" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="H/10" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="I/10" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
-                <td class="J/10" id="akatika" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)"></td>
+                <td class="A/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="B/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="C/10" id="hongChao" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="D/10" id="puKeKingdom" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="E/10" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="F/10" id="americaSocialism" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="G/10" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="H/10" id="arnokov" width="50" height="50" align="center"  onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="I/10" id="LeagueOfLiberty" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
+                <td class="J/10" id="akatika" width="50" height="50" align="center" onmouseover="areaSelect(this)" onmouseout="areaCancel(this)" onclick="ChunkClick(this)"></td>
             </tr>
         
             </table>
@@ -274,6 +281,7 @@
                 <h4><b>基本信息</b></h4>
                 <p id="nationName" style="display: inline;">拥有者：</p>
                 <p id="NationName" style="display: inline;">null</p>
+                
                 <br>
                 <div id="economy" style="display: none;">
                     <p style="display: inline;">经济：</p>
@@ -290,6 +298,12 @@
                 <div id="culture" style="display: none;">
                     <p style="display: inline;">文化：</p>
                     <p id="Culture" style="display: inline">null</p>
+                </div>
+
+                <br>
+                <div id="coordinate" style="display: none;">
+                    <p style="display: inline;">Coordinate：</p>
+                    <p id="Coordinate" style="display: inline">null</p>
                 </div>
 
                 <h4><b>驻军信息</b></h4>
@@ -309,6 +323,33 @@
                     <p style="display: inline;">第二支军队：</p>
                     <p id="Army2" style="display: inline">null</p>
                 </div>
+                <br>
+                <div id="move" style="display: none;">
+                    <p style="display: inline;">行动：</p>
+                    <p id="Move" style="display: inline">null</p>
+                </div>
+                <br>
+                <div id="spy" style="display: none;">
+                    <p style="display: inline;">谍报：</p>
+                    <p id="Spy" style="display: inline">null</p>
+                </div>
+                <br>
+                <div id="supply" style="display: none;">
+                    <p style="display: inline;">军需：</p>
+                    <p id="Supply" style="display: inline">null</p>
+                </div>
+                <br>
+                <div id="currentMoveNumber" style="display: none;">
+                    <p style="display: inline;">行动值：</p>
+                    <p id="CurrentMoveNumber" style="display: inline">null</p>
+                    <p id="step" style="display: inline;">null</p>
+                </div>
+                <br>
+                <div id="armyCoordinate" style="display: none;">
+                    <p style="display: inline;">军队坐标：</p>
+                    <p id="ArmyCoordinate" style="display: inline">null</p>
+                </div>
+                <br>
                 
 
             </span><br>
@@ -348,181 +389,129 @@
 <script language="javascript">
 
     function areaSelect(x){
+
+        display("coordinate");
+
+        document.getElementById('Coordinate').innerHTML= x.getAttribute('class');
+
         x.style.borderColor="black";
 
         className = x.getAttribute("class");
+
+        //alert(className);
 
         checkChunkArmy(className);
 
         //alert(className);
 
-        if(x.getAttribute("id") == "hongChao"){
-            //alert(x.getAttribute("id"));
-            document.getElementById("NationName").innerHTML="宏朝";
-            document.getElementById("Economy").innerHTML="12";
-            display("economy");
-            document.getElementById("Culture").innerHTML="0";
-            display("culture");
-            document.getElementById("Construction").innerHTML="0";
-            display("construction");
-        } else if (x.getAttribute("id") == "emptyArea"){
-            document.getElementById("NationName").innerHTML="无主之地";
-        }else if (x.getAttribute("id") == "Liurnia"){
-            document.getElementById("NationName").innerHTML="利耶尼亚邦联";
-            document.getElementById("Economy").innerHTML="5";
-            display("economy");
-            document.getElementById("Culture").innerHTML="10";
-            display("culture");
-            document.getElementById("Construction").innerHTML="6";
-            display("construction");
-        }else if (x.getAttribute("id") == "lianBangZhongZhuJun"){
-            document.getElementById("NationName").innerHTML="联众邦驻军";
-            document.getElementById("Economy").innerHTML="15";
-            display("economy");
-            document.getElementById("Culture").innerHTML="0";
-            display("culture");
-            document.getElementById("Construction").innerHTML="10";
-            display("construction");
-        }else if (x.getAttribute("id") == "puKeKingdom"){
-            document.getElementById("NationName").innerHTML="普克王国";
-            document.getElementById("Economy").innerHTML="10";
-            display("economy");
-            document.getElementById("Culture").innerHTML="10";
-            display("culture");
-            document.getElementById("Construction").innerHTML="10";
-            display("construction");
-        }else if (x.getAttribute("id") == "laiPaRepublic"){
-            document.getElementById("NationName").innerHTML="莱帕多基亚共和国";
-            document.getElementById("Economy").innerHTML="9";
-            display("economy");
-            document.getElementById("Culture").innerHTML="10";
-            display("culture");
-            document.getElementById("Construction").innerHTML="15";
-            display("construction");
-        }else if (x.getAttribute("id") == "tianChao"){
-            document.getElementById("NationName").innerHTML="天朝联邦";
-            document.getElementById("Economy").innerHTML="7";
-            display("economy");
-            document.getElementById("Culture").innerHTML="6";
-            display("culture");
-            document.getElementById("Construction").innerHTML="7";
-            display("construction");
-        }else if (x.getAttribute("id") == "leaonia"){
-            document.getElementById("NationName").innerHTML="劳尔尼亚联邦";
-            document.getElementById("Economy").innerHTML="1";
-            display("economy");
-            document.getElementById("Culture").innerHTML="1";
-            display("culture");
-            document.getElementById("Construction").innerHTML="12";
-            display("construction");
-        }else if (x.getAttribute("id") == "luoMianRepublic"){
-            document.getElementById("NationName").innerHTML="洛眠共和国";
-            document.getElementById("Economy").innerHTML="12";
-            display("economy");
-            document.getElementById("Culture").innerHTML="8";
-            display("culture");
-            document.getElementById("Construction").innerHTML="5";
-            display("construction");
-        }else if (x.getAttribute("id") == "griffin"){
-            document.getElementById("NationName").innerHTML="格里芬之国";
-            document.getElementById("Economy").innerHTML="8";
-            display("economy");
-            document.getElementById("Culture").innerHTML="7";
-            display("culture");
-            document.getElementById("Construction").innerHTML="7";
-            display("construction");
-        }else if (x.getAttribute("id") == "akatika"){
-            document.getElementById("NationName").innerHTML="阿喀提卡城国";
-            document.getElementById("Economy").innerHTML="5";
-            display("economy");
-            document.getElementById("Culture").innerHTML="9";
-            display("culture");
-            document.getElementById("Construction").innerHTML="5";
-            display("construction");
-        }else if (x.getAttribute("id") == "arnokov"){
-            document.getElementById("NationName").innerHTML="阿诺科夫社会主义联邦";
-            document.getElementById("Economy").innerHTML="6";
-            display("economy");
-            document.getElementById("Culture").innerHTML="9";
-            display("culture");
-            document.getElementById("Construction").innerHTML="7";
-            display("construction");
-        }else if (x.getAttribute("id") == "LeagueOfLiberty"){
-            document.getElementById("NationName").innerHTML="自由国家联合体";
-            document.getElementById("Economy").innerHTML="14";
-            display("economy");
-            document.getElementById("Culture").innerHTML="7";
-            display("culture");
-            document.getElementById("Construction").innerHTML="10";
-            display("construction");
-        }else if (x.getAttribute("id") == "sheep"){
-            document.getElementById("NationName").innerHTML="羊村";
-            document.getElementById("Economy").innerHTML="4";
-            display("economy");
-            document.getElementById("Culture").innerHTML="8";
-            display("culture");
-            document.getElementById("Construction").innerHTML="6";
-            display("construction");
-        }else if (x.getAttribute("id") == "Gambia"){
-            document.getElementById("NationName").innerHTML="冈比亚";
-            document.getElementById("Economy").innerHTML="5";
-            display("economy");
-            document.getElementById("Culture").innerHTML="7";
-            display("culture");
-            document.getElementById("Construction").innerHTML="5";
-            display("construction");
-        }else if (x.getAttribute("id") == "americaSocialism"){
-            document.getElementById("NationName").innerHTML="美利坚社会主义合众国";
-            document.getElementById("Economy").innerHTML="10";
-            display("economy");
-            document.getElementById("Culture").innerHTML="3";
-            display("culture");
-            document.getElementById("Construction").innerHTML="10";
-            display("construction");
-        }else if (x.getAttribute("id") == "britainSocialism"){
-            document.getElementById("NationName").innerHTML="不列颠社会主义共和国";
-            document.getElementById("Economy").innerHTML="Lack of Info";
-            display("economy");
-            document.getElementById("Culture").innerHTML="Lack of Info";
-            display("culture");
-            document.getElementById("Construction").innerHTML="Lack of Info";
-            display("construction");
-        }else if (x.getAttribute("id") == "limburg"){
-            document.getElementById("NationName").innerHTML="里森堡";
-            document.getElementById("Economy").innerHTML="7";
-            display("economy");
-            document.getElementById("Culture").innerHTML="7";
-            display("culture");
-            document.getElementById("Construction").innerHTML="8";
-            display("construction");
-        }else if (x.getAttribute("id") == "atlantisKingdom"){
-            document.getElementById("NationName").innerHTML="亚特兰蒂斯王国";
-            document.getElementById("Economy").innerHTML="11";
-            display("economy");
-            document.getElementById("Culture").innerHTML="12";
-            display("culture");
-            document.getElementById("Construction").innerHTML="5";
-            display("construction");
-        }else if (x.getAttribute("id") == "korea"){
-            document.getElementById("NationName").innerHTML="社会主义韩国";
-            document.getElementById("Economy").innerHTML="Lack of Info";
-            display("economy");
-            document.getElementById("Culture").innerHTML="Lack of Info";
-            display("culture");
-            document.getElementById("Construction").innerHTML="Lack of Info";
-            display("construction");
+        //var Nation = document.getElementById("Army1").innerHTML;
+        //var Personnel = document.getElementById("Army1personel").innerHTML;
+
+        /*
+
+        if(document.getElementById('militaryButton').value == "Military Mode Off"){
+            getMilitaryInfo(x);
         }
+
+        */
+
+        basicInfo(x);//载入基本信息
+
+        document.getElementById("CurrentMoveNumber").innerHTML = ArmyInfo(x.getAttribute('id'),0);
+        document.getElementById('step').innerHTML = "null";
+        document.getElementById('ArmyCoordinate').innerHTML="null"
         
         
     }
 
     function areaCancel(x){
         x.style.borderColor="gray";
+
+        //x.innerHTML = "";
+        
+    }
+
+    function test (){
+        alert("Developer Only.Please ignore if you are visitor.");
+        //alert(alliance("Lin"));
+        //if(event.keyCode == 87){
+        //    alert("yes");
+        //}
+
+    }
+//点击触发军事事件
+    function ChunkClick(x){
+        if(document.getElementById('militaryButton').value == "Military Mode Off"){
+            getMilitaryInfo(x);
+        }
+    }
+
+    document.onkeydown = function(){
+        
+        var y = document.getElementById("Coordinate").innerHTML;//获取（鼠标）当前坐标
+        var x;
+        var original = y;
+        //var y1;
+        if(document.getElementById('ArmyCoordinate').innerHTML=="null"){
+            document.getElementById('ArmyCoordinate').innerHTML = y;
+            x = document.getElementsByClassName(y)[0];
+        }else{
+            y = document.getElementById('ArmyCoordinate').innerHTML;//更改坐标为军队坐标
+            x = document.getElementsByClassName(y)[0];
+        }
+        
+        //x = document.getElementsByClassName(y)[0];
+        
+
+
+        var xValue = document.getElementById('ArmyCoordinate').innerHTML.substring(0,1);
+        var yValue = document.getElementById('ArmyCoordinate').innerHTML.substring(2,4);//core
+
+        
+        var east = coordinateChange(x.getAttribute('class'),1);
+        var west = coordinateChange(x.getAttribute('class'),-1);
+        var north = xValue +"/"+ (yValue-1);
+        var south = xValue +"/"+ (yValue+1);
+
+        //alert(east);
+
+        var EastBlock = document.getElementsByClassName(east)[0];
+        var WestBlock = document.getElementsByClassName(west)[0];
+        var NorthBlock = document.getElementsByClassName(north)[0];
+        var SouthBlock = document.getElementsByClassName(south)[0];
+        //alert(yValue);
+
+        if(event.keyCode == 68){
+            //alert('yes');
+            if(EastBlock!=null){
+                //alert(EastBlock);
+                movement(x,"D",EastBlock,WestBlock,NorthBlock,SouthBlock,original);
+                //alert(EastBlock);
+            } 
+        }else if(event.keyCode == 65){
+            if(WestBlock!=null){
+                //alert(EastBlock);
+                movement(x,"A",EastBlock,WestBlock,NorthBlock,SouthBlock,original);
+                //alert(EastBlock);
+            } 
+        }else if(event.keyCode == 87){
+            if(NorthBlock!=null){
+                //alert(EastBlock);
+                movement(x,"W",EastBlock,WestBlock,NorthBlock,SouthBlock,original);
+                //alert(EastBlock);
+            } 
+        }else if(event.keyCode == 83){
+            if(SorthBlock!=null){
+                //alert(EastBlock);
+                movement(x,"S",EastBlock,WestBlock,NorthBlock,SouthBlock,original);
+                //alert(EastBlock);
+            } 
+        }
         
     }
 
     function display(y){
-    //document.getElementById("text").innerHTML="changed";
+    
     document.getElementById(y).style.display = "inline";
     }
     function disappear(y){
@@ -530,3 +519,5 @@
     }
 </script>
 <script src="army.js"></script>
+<script src="military.js"></script>
+<script src="basicInfo.js"></script>
