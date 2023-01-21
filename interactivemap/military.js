@@ -24,7 +24,7 @@ function movement (x,direction,east,west,north,south,original){
                 battle();
             }
         }else if(direction=="S"){
-            if(north.innerHTML ==""){
+            if(south.innerHTML ==""){
                 move(x,south,original);
             }else{
                 battle();
@@ -38,7 +38,7 @@ function move (x,target,original){
     var MyNation = MyNation1.getAttribute('id');
     //alert(MyNation);
     var TargetNation = target.getAttribute('id');
-
+    //alert(TargetNation);
     var MyAlliance = alliance(x.getAttribute('id'));
     var TargetAlliance = alliance(target.getAttribute('id'));
     
@@ -75,7 +75,7 @@ function move (x,target,original){
         }else{
             if(MyNation==TargetNation){
                 document.getElementById('CurrentMoveNumber').innerHTML = currentMoveNumber-1;//更改当前行动力数值
-                    document.getElementById('step').innerHTML = step +1;//移动步数加一
+                    document.getElementById('step').innerHTML = (Number(step) +1);//移动步数加一
                     target.innerHTML = "<img src='Soldier.png' style='width:40px;height:20px;padding-top:5px;padding-left:5px'>"+ (currentMoveNumber-1)+"/"+Personnel;
                     document.getElementById('ArmyCoordinate').innerHTML = target.getAttribute('class');//将军队坐标设置为东方向格子坐标
             }else{
@@ -83,12 +83,12 @@ function move (x,target,original){
                     //判断敌我阵营
                     if(MyAlliance==TargetAlliance){//同阵营
                         document.getElementById('CurrentMoveNumber').innerHTML = MoveNumber;//更改当前行动力数值
-                    document.getElementById('step').innerHTML = step +1;//移动步数加一
+                    document.getElementById('step').innerHTML = (Number(step) +1);//移动步数加一
                     target.innerHTML = "<img src='Soldier.png' style='width:40px;height:20px;padding-top:5px;padding-left:5px'>"+ MoveNumber+"/"+Personnel;
                     document.getElementById('ArmyCoordinate').innerHTML = target.getAttribute('class');//将军队坐标设置为东方向格子坐标
                     }else{//最后一步
                         document.getElementById('CurrentMoveNumber').innerHTML = -16;//更改当前行动力数值
-                    document.getElementById('step').innerHTML = step +1;//移动步数加一
+                    document.getElementById('step').innerHTML = (Number(step) +1);//移动步数加一
                     target.innerHTML = "<img src='Soldier.png' style='width:40px;height:20px;padding-top:5px;padding-left:5px'>"+ -16 +"/"+Personnel;
                     document.getElementById('ArmyCoordinate').innerHTML = target.getAttribute('class');//将军队坐标设置为东方向格子坐标
                     }
