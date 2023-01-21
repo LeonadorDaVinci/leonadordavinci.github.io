@@ -75,6 +75,7 @@ function move (x,target,original){
         }else{
             if(MyNation==TargetNation){
                 if (currentMoveNumber>=1){
+                    //alert("test");
                     document.getElementById('CurrentMoveNumber').innerHTML = currentMoveNumber-1;//更改当前行动力数值
                     document.getElementById('step').innerHTML = (Number(step) +1);//移动步数加一
                     target.innerHTML = "<img src='Soldier.png' style='width:40px;height:20px;padding-top:5px;padding-left:5px'>"+ (currentMoveNumber-1)+"/"+Personnel;
