@@ -1,3 +1,2 @@
 # LeonadorDaVinci.github.io
-I have nothing to say.
-Special thanks to Github
+My personal website.Including lots of subjects i have tried.
