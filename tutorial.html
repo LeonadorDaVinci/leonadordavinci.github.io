@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+
+    <style>
+        body {
+            background-color: #000;
+        }
+        video {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -99;
+        }
+    </style>
+
+</head>
+<body>
+    <box>
+        <video autoplay loop muted>
+            <source src="tutorial.mp4">
+        </video>
+    <h1 align="center">Tutorial</h1>
+    <h2 align="center">指引</h2>
+    <div style="width: 100%;height: 100%;">
+        <div style="float: left;width: 10%;height: 10%;margin-left: 10%;">
+            <img src="Gideon.png">
+        </div>
+        <div style="float: left;width: 70%;height: 10%;">
+            <p id="content" style="background-color: white;opacity: 0.6;"></p>
+            <input id="proceedButton1" type="button" value="Proceed" onclick="proceed('1')">
+            <input id="proceedButton2" type="button" value="Proceed" onclick="proceed('2')" style="display: none;">
+            <input id="proceedButton3" type="button" value="Proceed" onclick="proceed('3')" style="display: none;">
+        </div>
+    </div>
+    <div>
+        <p id="tutorial_progress" style="display: none;">0</p>
+    </div>
+    </box>
+</body>
+</html>
+<script>
+    function proceed (option){
+
+        if(document.getElementById('proceedButton1').value == "【跳过教程直接进入游戏】"){
+            window.location.href="game.html";
+        }else if(document.getElementById('proceedButton1').value == "【进入游戏】"){
+            window.location.href="game.html";
+        }else{
+            document.getElementById("tutorial_progress").innerHTML ++;
+        
+            switch (document.getElementById("tutorial_progress").innerHTML){
+            case "1": {
+                tutorial_1(option);
+                break;
+            }case "2":{
+                tutorial_2(option);
+                break;
+            }case "3":{
+                tutorial_3(option);
+                break;
+            }case "4":{
+                tutorial_4(option);
+                break;
+            }case "5":{
+                tutorial_5(option);
+                break;
+            }
+            }
+        }
+        
+        
+    }
+</script>
+<script src="tutorial.js"></script>
