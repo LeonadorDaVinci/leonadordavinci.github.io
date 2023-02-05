@@ -1,4 +1,4 @@
-var specialSection = [1];
+var specialSection = [1,4,5];
 
 var MainDiv = document.getElementById('mainDiv');
 
@@ -18,12 +18,15 @@ var dynParagragh = 0;
 function ShowTexts(section,paragragh){
     
     if(checkTextsSection(section)=="normal"){
-        //alert(section);
+        
+        
         //button1.style.display = "none";
         checkUndefined(section,paragragh);//继续书写新内容
         
-    }else{
+    }else{//特殊分区
+        //alert(section);
         chrImg.style.width = "10%";
+        chrImg.style.height = "10%";
         MainDiv.style.width = "80%";
         addImg(section);
         if(isUndefined(section,paragragh)==false){//继续增加新可互动对话
@@ -38,7 +41,11 @@ function ShowTexts(section,paragragh){
 function addImg (section){//添加人物图片
     switch (section){
         case 1:{
-            chrImg.innerHTML = "<img src='fanlei.png'>";
+            chrImg.innerHTML = "<img src='fanlei.png' width='70px' height='70px'>";
+            break;
+        }case 4:{
+            chrImg.innerHTML = "<img src='soldierofgodrick.png' width='70px' height='70px'>";
+            break;
         }
 
     }
@@ -46,7 +53,7 @@ function addImg (section){//添加人物图片
 
 function removeImg (){//移除人物图片
         chrImg.style.width = "0%";
-        MainDiv.style.width = "100%";
+        MainDiv.style.width = "80%";
         chrImg.innerHTML = "";
 }
 
@@ -90,18 +97,17 @@ function checkUndefined (section,paragragh){//普通对话判断
     }
 }
 
-
-
-
-
-
 function checkTextsSection (section){//检查分区是否为特殊（人物）对话
-    for(var i=-1;i++;i<=specialSection.length){
-        if(section == specialSection[i]){
-            
+    for(var i=-1;i<=specialSection.length;i++){
+        //alert(i);
+        if(specialSection[i] == section){
+            //alert(specialSection[i]);
             return "special";
+        }else{
+            
         }
     }
+    
     return "normal";
 }
 

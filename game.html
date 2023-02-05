@@ -5,39 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+        video {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -99;
+        }
+    </style>
 </head>
 <body>
+    <box>
+        <video autoplay loop muted>
+            <source src="limgrave.mp4">
+        </video>
     <div style="width: 100%;height: 100%;">
-        <div style="float: left;width: 15%;height: 100%;">
+        <div style="float: left;width: 15%;height: 100%;margin-top: 2%;margin-left: 2%;">
             <div id="Love">
                 <p style="display: inline;">好感：</p><p id="love" style="display: inline;">0</p><p style="display: inline;">【冷漠】</p>
             </div>
             <div id="Anger">
                 <p style="display: inline;">情绪：</p><p id="anger" style="display: inline;">0</p><p style="display: inline;">【平静】</p>
             </div>
-            <div id="Fair">
-                <p style="display: inline;">害怕：</p><p id="fair" style="display: inline;">0</p>
+            <div id="Fear">
+                <p style="display: inline;">害怕：</p><p id="fear" style="display: inline;">0</p>
             </div>
         </div>
-        <div style="float: left;width: 84%;height: 100%;">
+        <div style="float: left;width: 80%;height: 100%;margin-top: 2%;">
             <div id="chrImg" style="float: left;width: 0%;height: 0%;">
 
             </div>
-            <div id="mainDiv" style="float: left;width: 100%;height: 100%;padding-left:40px ;" ><p id="mainArea"></p>
+            <div id="mainDiv" style="float: left;width: 80%;height: 100%;padding-left:40px ;" ><p id="mainArea" style="background-color: white;opacity: 0.6;"></p>
                 <input id="MainButton1" type="button" value="Proceed" onclick="proceedFunction('1')" style="display: inline;">
                 <input id="MainButton2" type="button" value="Proceed" onclick="proceedFunction('2')" style="display: none;">
                 <input id="Settings" type="button" value="Settings" onclick="clickSetting()" style="display: none;">
                 <input id="download" type="button" value="download" onclick="json()" style="display: none;">
+                <input id="development" type="button" value="dev interface" onclick="test()" style="display: none;">
                 <input id="input" type="file">
             </div>
         </div>
     </div>
+    </box>
 </body>
 </html>
 <script>
     var mainProgress = 0;
     var textsSection = 0;
     var textsParagraph =0;
+    var love = Number(document.getElementById('love').innerHTML);
+    var anger = Number(document.getElementById('anger').innerHTML);
+    var fear = Number(document.getElementById('fear').innerHTML);
     function proceedFunction (option){
         if(document.getElementById('MainButton1').value=="【Next Section】"){
             //下一个分区
@@ -60,19 +82,23 @@
     function clickSetting (){
         if(document.getElementById("Settings").value=="Settings"){
             document.getElementById("download").style.display ="inline";
+            document.getElementById("development").style.display ="inline";
             document.getElementById("Settings").value ="Back to Game";
+            document.getElementById("MainButton1").style.display ="none";
         }else{
             document.getElementById("download").style.display ="none";
+            document.getElementById("development").style.display ="none";
             textsParagraph = textsParagraph -1;
             document.getElementById('MainButton1').value="Proceed";
             document.getElementById("Settings").value ="Settings";
+            document.getElementById("MainButton1").style.display ="inline";
             proceedFunction("1");
         }
         
     }
 
     function json (){
-        var jsonData = '{"basic": {"version": "alpha1.0"},"data": {"main": "' + mainProgress + '"}}';
+        var jsonData = '{"basic": {"version": "alpha1.0"},"data": {"main": "' + mainProgress + '","section": "' + textsSection +'","paragraph": "' + textsParagraph + '","love": "'+ love+ '","anger": "'+ anger+'","fair": "' + fear +'"}}';
         //var json = '{"course": {"name": "JavaScript","author": "http://c.biancheng.net/","year": 2021,"genre": "Getting Started tutorial","bestseller": true},"fruits": ["Apple","Banana","Strawberry","Mango"]}';
 
         var obj = JSON.parse(jsonData);
@@ -88,6 +114,12 @@
     
 
     }
+
+    function test (){//开发者测试接口
+        //checkTextsSection(4);
+        alert(fear);
+    }
+    
 
 
 
@@ -108,7 +140,14 @@
             var obj = JSON.parse(jsonData);
 
             alert("已加载存档，版本：" +obj.basic.version);//测试成功！
-            //test
+            textsSection = obj.data.section;
+            textsParagraph = obj.data.paragraph;
+            paragraph--;
+            document.getElementById('love') = obj.data.love;
+            document.getElementById('anger')= obj.data.anger;
+            document.getElementById('fair')= obj.data.fair;
+
+            proceedFunction("1");
 
             
 
