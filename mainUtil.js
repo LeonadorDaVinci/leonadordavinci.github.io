@@ -1,4 +1,4 @@
-var specialSection = [1,4,5];
+var specialSection = [1,4,6,7];
 
 var MainDiv = document.getElementById('mainDiv');
 
@@ -18,8 +18,6 @@ var dynParagragh = 0;
 function ShowTexts(section,paragragh){
     
     if(checkTextsSection(section)=="normal"){
-        
-        
         //button1.style.display = "none";
         checkUndefined(section,paragragh);//继续书写新内容
         
@@ -45,6 +43,9 @@ function addImg (section){//添加人物图片
             break;
         }case 4:{
             chrImg.innerHTML = "<img src='soldierofgodrick.png' width='70px' height='70px'>";
+            break;
+        }case 6:{
+            chrImg.innerHTML = "<img src='melina1.png' width='70px' height='70px'>";
             break;
         }
 
@@ -93,6 +94,7 @@ function checkUndefined (section,paragragh){//普通对话判断
         button1.value = "【Next Section】";
         settings.style.display = "inline";
     }else{
+        //alert(section +'yes'+paragragh)
         MainArea.innerHTML += gameTexts(section,paragragh);
     }
 }

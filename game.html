@@ -35,6 +35,11 @@
             <div id="Fear">
                 <p style="display: inline;">害怕：</p><p id="fear" style="display: inline;">0</p>
             </div>
+            <div>
+                <p id="line" style="display: none;"></p>
+                <p id="sectionId" style="display: none;"></p>
+                <p id="pane"></p>
+            </div>
         </div>
         <div style="float: left;width: 80%;height: 100%;margin-top: 2%;">
             <div id="chrImg" style="float: left;width: 0%;height: 0%;">
@@ -54,7 +59,6 @@
 </body>
 </html>
 <script>
-    var mainProgress = 0;
     var textsSection = 0;
     var textsParagraph =0;
     var love = Number(document.getElementById('love').innerHTML);
@@ -68,13 +72,16 @@
             document.getElementById('MainButton1').value="Proceed";
             document.getElementById('Settings').style.display = "none";
             document.getElementById('mainArea').innerHTML = "";
+            document.getElementById('pane').innerHTML = textsSection + "/" + textsParagraph+"/"+ document.getElementById('line').innerHTML;
             ShowTexts(textsSection,textsParagraph);
             textsParagraph++;
         }else if(document.getElementById('MainButton1').value=="Proceed"){
             //在当前分区继续
+            document.getElementById('pane').innerHTML = textsSection + "/" + textsParagraph+"/"+ document.getElementById('line').innerHTML;
             ShowTexts(textsSection,textsParagraph);
             textsParagraph ++;
         }else{//点击选项
+            document.getElementById('pane').innerHTML = textsSection + "/" + textsParagraph+"/"+ document.getElementById('line').innerHTML;
             clickOption(textsSection,textsParagraph,option);
         }
     }
@@ -98,7 +105,9 @@
     }
 
     function json (){
-        var jsonData = '{"basic": {"version": "alpha1.0"},"data": {"main": "' + mainProgress + '","section": "' + textsSection +'","paragraph": "' + textsParagraph + '","love": "'+ love+ '","anger": "'+ anger+'","fair": "' + fear +'"}}';
+        var plotLine = document.getElementById('line').innerHTML;
+        var sectionId = document.getElementById('sectionId').innerHTML;
+        var jsonData = '{"basic": {"version": "alpha1.0"},"data": {"line": "' + plotLine + '","sectionId": "'+ sectionId +'","section": "' + textsSection +'","paragraph": "' + textsParagraph + '","love": "'+ love+ '","anger": "'+ anger+'","fair": "' + fear +'"}}';
         //var json = '{"course": {"name": "JavaScript","author": "http://c.biancheng.net/","year": 2021,"genre": "Getting Started tutorial","bestseller": true},"fruits": ["Apple","Banana","Strawberry","Mango"]}';
 
         var obj = JSON.parse(jsonData);
@@ -115,13 +124,21 @@
 
     }
 
-    function test (){//开发者测试接口
-        //checkTextsSection(4);
-        testing();
-        alert(globalVar(ruinOfSoldierCampsite));
+    function setSection (section){
+        textsSection = section;
     }
-    
 
+    function setParagraph (paragraph){
+        textsParagraph = paragraph;
+    }
+
+    function test (){//开发者测试接口
+        alert("Developer Only.Please ignore if you are visitor.开发者测试接口，访客请止步。");
+        //checkTextsSection(4);
+        //document.getElementById('line').innerHTML = "2";
+        //alert(document.getElementById('line').innerHTML);
+        //alert(nonstatic(5,0,'2'));
+    }
 
 
     
@@ -141,13 +158,14 @@
             var obj = JSON.parse(jsonData);
 
             alert("已加载存档，版本：" +obj.basic.version);//测试成功！
+            document.getElementById('line').innerHTML = obj.data.line;
             textsSection = obj.data.section;
             textsParagraph = obj.data.paragraph;
             paragraph--;
             document.getElementById('love') = obj.data.love;
             document.getElementById('anger')= obj.data.anger;
             document.getElementById('fair')= obj.data.fair;
-
+            document.getElementById('sectionId').innerHTML = obj.data.sectionId;
             proceedFunction("1");
 
             

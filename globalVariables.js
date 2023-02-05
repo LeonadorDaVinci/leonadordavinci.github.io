@@ -1,15 +1,29 @@
 var ruinOfSoldierCampsite = true;
 
-var test = [ruinOfSoldierCampsite];
+var VarArray = [];
+
+var tempArray = [];
 
 function globalVar (varName){
-    for(var i=-1;i<=test.length;i++){
-        if(varName == test[i]){
-            return test[i];
+    //addVar2arr();
+    switch(varName){
+        case "ruinOfSoldierCampsite":{
+            return ruinOfSoldierCampsite;
         }
     }
 }
 
-function testing (){
-    alert('yes');
+function globalVar (varName,value){
+    //addVar2arr();
+    switch(varName){
+        case "ruinOfSoldierCampsite":{
+            ruinOfSoldierCampsite = value;
+        }
+    }
 }
+
+/*
+function addVar2arr (){
+    VarArray[0] = ruinOfSoldierCampsite;//关卡前废墟
+}
+*/
