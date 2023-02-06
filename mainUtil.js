@@ -1,5 +1,7 @@
 var specialSection = [1,4,6,7];
 
+var subSection = null;
+
 var MainDiv = document.getElementById('mainDiv');
 
 var MainArea = document.getElementById("mainArea");
@@ -19,7 +21,7 @@ function ShowTexts(section,paragragh){
     
     if(checkTextsSection(section)=="normal"){
         //button1.style.display = "none";
-        checkUndefined(section,paragragh);//继续书写新内容
+        checkUndefined(section,paragragh);//继续新内容或者换区
         
     }else{//特殊分区
         //alert(section);
@@ -36,29 +38,8 @@ function ShowTexts(section,paragragh){
     }
 }
 
-function addImg (section){//添加人物图片
-    switch (section){
-        case 1:{
-            chrImg.innerHTML = "<img src='fanlei.png' width='70px' height='70px'>";
-            break;
-        }case 4:{
-            chrImg.innerHTML = "<img src='soldierofgodrick.png' width='70px' height='70px'>";
-            break;
-        }case 6:{
-            chrImg.innerHTML = "<img src='melina1.png' width='70px' height='70px'>";
-            break;
-        }
-
-    }
-}
-
-function removeImg (){//移除人物图片
-        chrImg.style.width = "0%";
-        MainDiv.style.width = "80%";
-        chrImg.innerHTML = "";
-}
-
 function interactiveTexts (section,paragragh){//互动对话添加
+    addImg(section);
     var str = gameTexts(section,paragragh);
     
     //alert(substr);
@@ -91,11 +72,14 @@ function isUndefined (section,paragragh){//判断变量是否未定义
 
 function checkUndefined (section,paragragh){//普通对话判断
     if(gameTexts(section,paragragh)== undefined){
+        
         button1.value = "【Next Section】";
         settings.style.display = "inline";
     }else{
         //alert(section +'yes'+paragragh)
+        
         MainArea.innerHTML += gameTexts(section,paragragh);
+        
     }
 }
 
@@ -118,3 +102,6 @@ function h(x){//增加
     char =x;
     
 }
+
+
+

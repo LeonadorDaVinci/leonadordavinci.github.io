@@ -1,6 +1,3 @@
-var optionGroup1 = ["【杀了白面具，不用再听他的嘲讽。】","【假装无事发生，默默离开。】"];
-var optionGroup2 = ["【拒不从命，抵抗到最后一刻。】","【悄悄溜走，等到晚上再来。】"];
-var optionGroup3=["【同意】","【拒绝】"];
 var button1 = document.getElementById("MainButton1");
 var button2 = document.getElementById("MainButton2");
 var MainArea = document.getElementById("mainArea");
@@ -21,7 +18,7 @@ function clickOption (section,paragragh,option){
                 fear.innerHTML = Number(fear.innerHTML)+2;
             }else{
                 removeImg();
-                MainArea.innerHTML = "在白面具嘲讽的语气中，你悄悄离开了。";
+                MainArea.innerHTML = "在白面具嘲讽的语气中，褪色者悄悄离开了。";
                 button1.value = "【Next Section】";
                 button2.style.display = "none";
                 //settings.style.display="inline";
@@ -53,6 +50,7 @@ function clickOption (section,paragragh,option){
                 setParagraph(0);
                 document.getElementById('sectionId').innerHTML = "1";
                 anger.innerHTML ++;
+
                 proceedFunction("1");
             }else{
                 //removeImg();
@@ -63,23 +61,22 @@ function clickOption (section,paragragh,option){
                 setParagraph(0);
                 document.getElementById('sectionId').innerHTML = "2";
                 anger.innerHTML --;
-                proceedFunction("2");
+                proceedFunction("1");
             }
             break;
         }case 7:{
             removeImg();
             button1.value = "【Next Section】";
-            if(document.getElementById('sectionId').innerHTML = "1"){
-                document.getElementById('sectionId').innerHTML = "";
-            }
-            MainArea.innerHTML = "alpha1.0版本的内容到此为止！该测试版本旨在测试文件能否正确地运行，所以只开放了一小部分剧情。如有bug欢迎反馈至邮箱：LeonadorDaVinci@outlook.com。你现在可以下载地图存档（点击Settings，然后点download）";
+            MainArea.innerHTML = "";
             settings.style.display = "inline";
+            proceedFunction("1");
             break;
         }
     }
 }
 
 function checkOptions (section,paragragh){//自动给按钮分配选项内容
+    //从optionGroup拉取数据
     switch (section){
         case 1:{
             button2.style.display = "inline";
@@ -109,4 +106,6 @@ function checkOptions (section,paragragh){//自动给按钮分配选项内容
         }
     }
 }
+
+
 
