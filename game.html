@@ -21,9 +21,15 @@
 </head>
 <body>
     <box>
-        <video autoplay loop muted>
+        <p style="display: inline;" id="audioP">谷歌浏览器不支持自动播放音频，所以请在此处播放。按Proceed会自动隐藏。</p>
+        <audio id="audio" autoplay style="display: inline;" loop controls>
+            
+            <source src="limgrave.mp3" type="audio/mp3" id="audio">
+        </audio>
+        <video autoplay loop muted id="bgv">
             <source src="limgrave.mp4">
         </video>
+        
     <div style="width: 100%;height: 100%;">
         <div style="float: left;width: 15%;height: 100%;margin-top: 2%;margin-left: 2%;">
             <div id="Love">
@@ -59,8 +65,16 @@
 </body>
 </html>
 <script>
+
+document.addEventListener('touchstart', function() {
+
+    document.getElementById('audio').play()
+
+}) 
+
     var textsSection = 0;
     var textsParagraph =0;
+    //var audio = document.getElementById("audio");
     function proceedFunction (option){
         if(document.getElementById('MainButton1').value=="【Next Section】"){
             //下一个分区
@@ -73,6 +87,9 @@
             ShowTexts(textsSection,textsParagraph);
             textsParagraph++;
         }else if(document.getElementById('MainButton1').value=="Proceed"){
+            document.getElementById('audio').style.display = "none";
+            document.getElementById('audioP').style.display = "none";
+            document.getElementById
             //在当前分区继续
             document.getElementById('pane').innerHTML = textsSection + "/" + textsParagraph+"/"+ document.getElementById('line').innerHTML+"/"+document.getElementById('sectionId').innerHTML;
             ShowTexts(textsSection,textsParagraph);
