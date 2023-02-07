@@ -49,7 +49,13 @@ function nonstatic (section,paragragh,line){//分支判定
                     return Section8_2_2[paragragh];
                 }
             }   
-        } 
+        }case 9:{
+            return Section9[paragragh];
+        }case 10:{
+            return Section10[paragragh];
+        }case 11:{
+            return Section11[paragragh];
+        }
         
     }
 }

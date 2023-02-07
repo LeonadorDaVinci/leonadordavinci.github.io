@@ -28,7 +28,7 @@ function clickOption (section,paragragh,option){
         }case 4:{
             if(option==1){
                 removeImg();
-                MainArea.innerHTML = "依靠精湛的格斗技术，关卡前废墟的士兵招架不住，被逐个击破。褪色者在杀死他们后，取走了所有的战利品。<br>";
+                MainArea.innerHTML = "依靠精湛的格斗技术，关卡前废墟的士兵招架不住，被逐个击破。褪色者在杀死他们后，取走了所有的战利品，包括一把精致的君王军大剑。<br>";
                 button1.value = "【Next Section】";
                 button2.style.display = "none";
                 fear.innerHTML = Number(fear.innerHTML)+2;
