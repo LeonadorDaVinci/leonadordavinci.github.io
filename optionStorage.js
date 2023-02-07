@@ -49,7 +49,7 @@ function clickOption (section,paragragh,option){
                 setSection(7);
                 setParagraph(0);
                 document.getElementById('sectionId').innerHTML = "1";
-                anger.innerHTML ++;
+                anger.innerHTML = Number(anger.innerHTML) +5;
 
                 proceedFunction("1");
             }else{
@@ -60,7 +60,7 @@ function clickOption (section,paragragh,option){
                 setSection(7);
                 setParagraph(0);
                 document.getElementById('sectionId').innerHTML = "2";
-                anger.innerHTML --;
+                anger.innerHTML =Number(anger.innerHTML) - 5;
                 proceedFunction("1");
             }
             break;
