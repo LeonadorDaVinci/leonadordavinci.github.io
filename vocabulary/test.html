@@ -9,6 +9,7 @@
 <body>
     <h1 id="English" align="center">null</h1>
     <h3 id="yesorno" align="center"></h3>
+    <input type="button" id='mode' onclick="modeChange2kindle()" value="Kindle Mode">
     <div align="center">
     <input type="button" id='1' onclick="selected(1)" value="null">
     <input type="button" id='2' onclick="selected(2)" value="null">
@@ -23,6 +24,8 @@
 </body>
 </html>
 <script>
+
+    var downcount = 1000;
 
     var CorrectOption = null;
 
@@ -91,12 +94,12 @@
         if(option == CorrectOption){
             document.getElementById('yesorno').innerHTML = "Correct!"
             document.getElementById('scores').innerHTML ++;
-            document.getElementById('time').innerHTML =1000;
+            document.getElementById('time').innerHTML =downcount;
             
         }else{
             document.getElementById('yesorno').innerHTML = "Wrong!"
             document.getElementById('scores').innerHTML = 0;
-            document.getElementById('time').innerHTML =500;
+            document.getElementById('time').innerHTML =downcount - 500;
             
         }
 
@@ -115,13 +118,17 @@
             clearTimeout(t);
             alert("Time Out! You Failed!");
             document.getElementById('scores').innerHTML = 0;
-            document.getElementById('time').innerHTML =1000;
+            document.getElementById('time').innerHTML =downcount;
             time();
         }
     }
 
     function getInt (n,m){
         return Math.floor(Math.random() * (m - n + 1)) + n;    
+    }
+
+    function modeChange2kindle (){
+        downcount = 999999;
     }
 
 </script>
