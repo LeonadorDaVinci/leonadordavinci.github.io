@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary</title>
+</head>
+<body>
+    <h1 id="English" align="center">null</h1>
+    <h3 id="yesorno" align="center"></h3>
+    <input type="button" id='mode' onclick="modeChange2kindle()" value="Kindle Mode">
+    <div align="center">
+    <input type="button" id='1' onclick="selected(1)" value="null">
+    <input type="button" id='2' onclick="selected(2)" value="null">
+    <input type="button" id='3' onclick="selected(3)" value="null">
+    <input type="button" id='4' onclick="selected(4)" value="null">
+    </div>
+    <br>
+    <div align="center"><h4 style="display: inline;" align="center">Scores:</h4><h4 id="scores" align="center" style="display: inline;">0</h4></div>
+    <p id="time" align="center">1000</p>
+    
+
+</body>
+</html>
+<script>
+
+    var downcount = 1000;
+
+    var CorrectOption = null;
+
+    var group = null;
+
+    var Random1 = null;
+    var Random2 = null;
+    var Random3 = null;
+    var Random4 = null;
+
+    window.onload = function (){
+        generate();
+        time();
+    }
+
+    function generate (){
+        
+        group = getInt(0,english.length-1);
+        CorrectOption = getInt(1,4);
+
+        for(var i = 10;i++;i<30){
+            Random1 = getInt(0,english.length-1);
+            Random2 = getInt(0,english.length-1);
+            Random3 = getInt(0,english.length-1);
+            Random4 = getInt(0,english.length-1);
+            if(Random1 != group && Random2 != group && Random2 != group && Random4 != group){
+                break;
+            }
+        }
+
+        
+
+        document.getElementById('1').value = chinese[Random1];
+        document.getElementById('2').value = chinese[Random2];
+        document.getElementById('3').value = chinese[Random3];
+        document.getElementById('4').value = chinese[Random4];
+
+        document.getElementById('English').innerHTML = english[group];
+        //document.getElementById('1').innerHTML = chinese[group];
+        switch (CorrectOption){
+            case 1:{
+                document.getElementById('1').value = chinese[group];
+                break;
+            }case 2:{
+                document.getElementById('2').value = chinese[group];
+                break;
+            }case 3:{
+                document.getElementById('3').value = chinese[group];
+                break;
+            }case 4:{
+                document.getElementById('4').value = chinese[group];
+                break;
+            }
+        }
+
+        
+        
+    }
+
+
+
+    function selected (option){
+        //var correctAnswer = document.getElementById(CorrectOption).value;
+        //alert(correctAnswer);
+        //var question = document.getElementById("English").innerHTML;
+        if(option == CorrectOption){
+            document.getElementById('yesorno').innerHTML = "Correct!"
+            document.getElementById('scores').innerHTML ++;
+            document.getElementById('time').innerHTML =downcount;
+            
+        }else{
+            document.getElementById('yesorno').innerHTML = "Wrong!"
+            document.getElementById('scores').innerHTML = 0;
+            document.getElementById('time').innerHTML =downcount - 500;
+            
+        }
+
+        generate();
+        
+        
+    }
+
+    function time (){
+        document.getElementById('time').innerHTML --;
+        t = setTimeout("time()",1);
+
+        
+
+        if(document.getElementById('time').innerHTML <=-1){
+            clearTimeout(t);
+            alert("Time Out! You Failed!");
+            document.getElementById('scores').innerHTML = 0;
+            document.getElementById('time').innerHTML =downcount;
+            time();
+        }
+    }
+
+    function getInt (n,m){
+        return Math.floor(Math.random() * (m - n + 1)) + n;    
+    }
+
+    function modeChange2kindle (){
+        downcount = 999999;
+    }
+
+</script>
+<script src="english.js"></script>
+<script src="chinese.js"></script>
